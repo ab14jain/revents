@@ -23,7 +23,7 @@ class EventForm extends Component {
     }
 
     render() {
-        const {cancelFormOpen} = this.props;
+        const {cancelFormOpen, createEvent} = this.props;
         const {title, date, city, venue, hostedBy} = this.state;
         return (
             <Segment>
@@ -68,7 +68,7 @@ class EventForm extends Component {
                     onChange={this.handleInputChange}
                     placeholder="Enter the name of person hosting" />
                 </Form.Field>
-                <Button positive type="submit">
+                <Button positive type="submit" onClick={createEvent}>
                   Submit
                 </Button>
                 <Button onClick={cancelFormOpen} type="button">Cancel</Button>
