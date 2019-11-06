@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {Segment, Form, Button} from 'semantic-ui-react';
+import PlaceInput from '../../../app/form/PlaceInput';
 
 class EventForm extends Component {
 
@@ -25,6 +26,9 @@ class EventForm extends Component {
     render() {
         const {cancelFormOpen, createEvent} = this.props;
         const {title, date, city, venue, hostedBy} = this.state;
+        
+
+    
         return (
             <Segment>
               <Form onSubmit={this.handleOnSubmit}>
@@ -45,10 +49,10 @@ class EventForm extends Component {
                     type="date" placeholder="Event Date" />
                 </Form.Field>
                 <Form.Field>
-                  <label>City</label>
+                  <label>City</label>                    
                   <input 
                     name='city' 
-                    value={city} 
+                    value={PlaceInput} 
                     onChange={this.handleInputChange}
                     placeholder="City event is taking place" />
                 </Form.Field>
